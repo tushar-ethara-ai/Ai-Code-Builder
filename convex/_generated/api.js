@@ -12,6 +12,8 @@ const makeProxy = (path = []) => {
   
   return new Proxy(target, {
     get(t, prop) {
+      if (prop === Symbol.for("functionName")) return t._path;
+      if (typeof prop === 'symbol') return undefined;
       if (prop === '__esModule') return false;
       if (prop === 'then') return undefined;
       if (prop === '_path') return t._path;

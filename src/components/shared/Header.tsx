@@ -16,13 +16,18 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Sun, Moon, Terminal, Cpu, Clock, Settings2, LogOut } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Header() {
   const { data: session } = useSession();
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navLinks = [
     { href: "/dashboard", label: "Dashboard", icon: Cpu, protected: true },
@@ -83,7 +88,7 @@ export function Header() {
             className="rounded-lg"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? (
+            {mounted && theme === "dark" ? (
               <Sun className="h-[1.2rem] w-[1.2rem] text-amber-400 animate-pulse" />
             ) : (
               <Moon className="h-[1.2rem] w-[1.2rem] text-indigo-500" />
