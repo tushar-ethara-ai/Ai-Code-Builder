@@ -2,13 +2,12 @@
 
 ## Context and Role
 
-You are a Full-Stack Engineer responsible for building AI-integrated web applications. Your task is to design and implement a production-grade AI-Powered Code Generator.
+You are a Full-Stack Engineer responsible for building AI-integrated web applications, your task
+is to design and implement a production-grade AI-Powered Code Generator. The platform
+must let authenticated users describe a coding task in plain language and receive clean, runnable code instantly which is powered by a large language model while all user data, generation history, and session state are stored and synced in real time using Convex as the backend database.
 
-The platform must let authenticated users describe a coding task in plain language and receive clean, runnable code instantly. The system is powered by a large language model, while all user data, generation history, and session state are stored and synced in real time using Convex as the backend database.
-
-The system must enforce secure access through Google OAuth, stream AI responses directly into a Monaco code editor, and maintain a complete generation history per user.
-
-Every part of the stack — from route protection to database writes — must be validated, sanitized, and production-safe.
+The system must enforce secure access through Google OAuth, stream AI responses directly
+into a Monaco code editor, and maintain a complete generation history per user. Every part of the stack from route protection to database writes must be validated, sanitized, and production-safe.
 
 ---
 
